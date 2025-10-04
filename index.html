@@ -1,0 +1,677 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Patrick Brown | BI Analyst Portfolio</title>
+		<meta name="description" content="Portfolio showcasing Patrick Brown's Business Intelligence projects in SQL, DAX, and Power BI." />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- Prism.js for syntax highlighting -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dax.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+		<style>
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+#navbar ul li a:hover,
+#navbar ul li a.active {
+    color: #f39c12; 
+}
+body {
+    padding-top: 60px; /* adjust based on navbar height */
+}
+
+
+#intro, #overview, #sql, #key-results, #visuals, #methodology, #conclusion {
+            scroll-margin-top: 70px;
+}
+
+#contact > h3 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-style: Arial;
+    color: #f39c12; /* accent color */
+}
+
+/* Footer Container: center sections horizontally */
+.footer-container {
+  display: flex;
+  justify-content: center;    /* center sections */
+  align-items: flex-start;    /* align tops of sections */
+  gap: 80px;                  /* spacing between sections */
+  flex-wrap: wrap;            /* stack on smaller screens */
+  width: 100%;
+  max-width: 1200px;          /* constrain width like main content */
+  margin: 0 auto;
+  padding: 0;                 /* padding handled by footer itself */
+}
+
+/* Individual Section */
+.footer-section {
+  text-align: center;
+  flex: 0 1 auto;              
+}
+
+/* Section Titles */
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-style: Arial;
+  color: #f39c12;
+}
+
+/* Icons inside sections */
+.footer-section .icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section .icons li a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-section .icons li a:hover {
+  color: #f39c12;
+}
+
+/* Copyright area */
+#copyright {
+    display: flex;
+    flex-direction: column;  /* stack lines vertically */
+    align-items: center;     /* horizontally center both lines */
+    gap: 5px;                /* space between copyright and design */
+    margin-top: 30px;        /* space from the footer content above */
+    padding-top: 15px;
+    /*border-top: 1px solid #333;*/
+    text-align: center;
+}
+
+#copyright ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#copyright a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+#copyright a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive: stack sections vertically on small screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+#main h3 {
+    scroll-margin-top: 70px; /* same or slightly more than navbar height */
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* height of navbar */
+}
+/* Keep name properly capitalized */
+#intro h1 {
+    text-transform: none; /* prevents all caps */
+    font-size: 3rem;      /* large, prominent */
+    font-weight: bold;
+	font-style: Arial;
+    text-align: center;
+}
+
+/* Emphasize "Portfolio" without shouting */
+#intro .portfolio-title {
+    display: block;
+    font-size: 2rem;
+	font-style: Arial;
+    font-weight: 600;
+    color: #555;           /* slightly muted to differentiate from name */
+    margin-top: 0.5rem;
+}
+#intro .portfolio-title {
+    font-variant: small-caps;
+}
+h2 {
+    text-transform: none; /* keeps the capitalization as in HTML */
+}
+h3 {
+	font-size: 1.2rem;
+    font-style: Arial;
+    text-transform: none; /* keeps the capitalization as in HTML */
+}
+/* Smooth scrolling & navbar padding */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+/* Projects Gallery */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.figure-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+body {
+  font-size: 1rem;      /* keeps text size consistent */
+  line-height: 1.6;     /* clean spacing for all text */
+  font-family: Arial; /* or your preferred font */
+  color: #333;
+}
+.figure-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 8px 0;
+}
+
+/* Center description on mobile, left-align on desktop */
+@media (min-width: 769px) {
+  .figure-description {
+    text-align: left;
+  }
+}
+@media (max-width: 768px) {
+  .figure-description {
+    text-align: center;
+  }
+}
+
+.projects-container figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.projects-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s;
+}
+
+.projects-container figcaption {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Links */
+.project-link {
+  display: block;
+}
+			
+.project-link img {
+  cursor: zoom-in; /* magnifying glass cursor */
+}
+/*@media (min-width: 769px) {
+  .project-link {
+    pointer-events: none; disables click on desktop
+}*/
+@media (max-width: 480px) {
+  #copyright ul {
+    flex-direction: column;
+    gap: 5px; /* smaller spacing between stacked items */
+  }
+}
+</style>
+</head>
+<body class="is-preload">
+   <!-- Navigation Bar -->
+    <nav id="navbar">
+        <ul>
+    <li><a href="#intro">Home</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#sql">SQL</a></li>
+    <li><a href="#keyresults">Key Results</a></li>
+    <li><a href="#visuals">Report Visuals</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+        <h1>
+            Patrick Brown<br />
+            <span class="portfolio-title">Portfolio</span>
+        </h1>
+        <p>
+            <strong>Business Intelligence Analyst</strong> – skilled in <strong>SQL</strong>, <strong>DAX</strong>, and <strong>Power BI</strong>
+        </p>
+        <ul class="actions">
+            <li>
+                <a href="#overview" class="button icon solid solo fa-arrow-down scrolly">
+                    Continue
+                </a>
+            </li>
+        </ul>
+    </div>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+<article id="superstore-project" class="post featured">
+  <header class="major">
+    <h2>Business Intelligence Workflow Using SQL, DAX and Power BI</h2>
+  </header>
+
+  <!-- Project Introduction -->
+  <h3 id="overview">Project Overview</h3>
+  <p>
+    This project demonstrates a complete Business Intelligence workflow. It starts with 
+    cleaning transactional superstore sales data in SQL, followed by 
+    analysis and interactive reporting in Power BI. 
+    Objectives include data integrity, understanding customer behaviour, identifying top products and segments 
+    and creating actionable business insights.
+  </p>
+
+  <!-- SQL Data Cleaning -->
+  <h3 id="sql">Data Cleaning & Transformation (SQL)</h3>
+  <ol>
+    <li><strong>Data Importing:</strong> Created a superstore database and imported CSV sales data, verified row/column counts.</li>
+    <li><strong>Data Cleaning:</strong> Handled missing values, standardised text fields, corrected invalid dates and negative quantities, flagged outliers.</li>
+    <li><strong>Data Transformation:</strong> Added columns to calculate customer first order date, the number of months since first order and created High/Medium/Low Value customer segments.</li>
+    <p><strong>Creating Calculated Columns (SQL Snippet):</strong></p>
+        <pre><code class="language-sql">
+-- Create First Order Date and Relative Month Columns
+ALTER TABLE superstoresales ADD MinOrderDate DATE;
+ALTER TABLE superstoresales ADD OrderRelativeMonth INT;
+
+WITH OrderRelativeCTE AS (
+  SELECT
+      CustomerID,
+      OrderDate,
+      MIN(OrderDate) OVER(PARTITION BY CustomerID) AS MinOrderDate,
+      DATEDIFF(MONTH, MIN(OrderDate) OVER(PARTITION BY CustomerID), OrderDate) AS OrderRelativeMonth
+  FROM SuperstoreSales
+)
+UPDATE s
+SET s.MinOrderDate = c.MinOrderDate, s.OrderRelativeMonth = c.OrderRelativeMonth
+FROM superstoresales s 
+JOIN OrderRelativeCTE c
+ON s.CustomerID = c.CustomerID AND s.OrderDate = c.OrderDate;
+      </code></pre>
+    </li>
+      
+  </ol>
+    <p>The full SQL script is available on <a href="https://github.com/patrickbrown123/portfolio/blob/main/superstore_etl_analysis.sql">GitHub</a>.</p>
+    <p>With the dataset now cleaned and transformed in SQL, the next stage was analysis and interactive reporting in Power BI.</p>
+
+<h3 id="keyresults">Data Analysis & Reporting (Power BI)</h3>
+<h3>Key Results</h3>
+<ul>
+    <li><strong>Total Sales & Profit Margin:</strong> $2.3M in Total Sales, 12.5% Profit Margin. Strong overall performance, with Q4 driving the highest growth.</li>
+    <li><strong>Category & Subcategory:</strong> Technology is the top Category. Within Furniture, Tables show negative Profit Margin — an area for operational improvement.</li>
+    <li><strong>Regional Performance:</strong> West Region contributes 32% of Total Sales. South Region contributes under 20%, suggesting a need for targeted strategies.</li>
+    <li><strong>Product Insights:</strong> The top selling Product outperforms the 5th ranked Product by more than 3, showing an overreliance risk.</li>
+    <li><strong>Customer Segments:</strong> High Value customers (15% of base) drive 40% of Total Sales. Medium and Low Value customers show growth potential — opportunities to upsell and increase revenue.</li>
+    <li><strong>Segment Analysis:</strong> Consumer customers contribute over half of Total Sales. Home Office customers show highest profitability — worth prioritising for targeted campaigns.</li>
+    <li><strong>Customer Retention:</strong> Cohort analysis reveals the biggest drop off occurs in the first three months, highlighting onboarding and retention opportunities.</li>
+</ul>
+
+<h3 id="visuals">Report Visuals</h3>
+<p><strong>Note:</strong> The visuals shown below are static screenshots from Power BI Desktop. They are not interactive and do not respond to filters or slicers.</p>
+	<p><strong>YTD (Year to Date):</strong> Total accumulated from the start of the year to the selected date. <br> 
+    <strong>YoY (Year over Year):</strong> Comparison of the same period in the current year versus the previous year.</p>
+    
+<div class="projects-container">
+
+  <!-- Figure 1 -->
+  <div class="figure-wrapper">
+    <p class="figure-description">
+      <strong>Figure 1</strong> shows a high level overview of Total Sales, Total Profit, Profit Margin, Unique Customers and YoY growth.
+    </p>
+    <figure class="project">
+      <a href="images/figure1.png" data-pswp-width="1200" data-pswp-height="800" class="project-link">
+        <img src="images/figure1.png" alt="Power BI KPI Cards">
+      </a>
+      <figcaption><strong>Figure 1:</strong> KPI Cards and Overall Trends – Total Sales, Total Profit, Profit Margin, Unique Customers and YoY Growth</figcaption>
+    </figure>
+  </div>
+
+  <!-- Figure 2 -->
+  <div class="figure-wrapper">
+    <p class="figure-description">
+      <strong>Figure 2</strong> shows Total Sales by Category, with Subcategory accessible via drill down, as well as by Region, Product, Customer Segment and Segment, highlighting trends and key areas of focus.
+    </p>
+    <figure class="project">
+      <a href="images/figure2.png" data-pswp-width="1200" data-pswp-height="800" class="project-link">
+        <img src="images/figure2.png" alt="Sales breakdown by Category">
+      </a>
+      <figcaption><strong>Figure 2:</strong> Total Sales by Category (Subcategory available via drill down), Region, Product, Customer Segment and Segment.</figcaption>
+    </figure>
+  </div>
+
+  <!-- Figure 3 -->
+  <div class="figure-wrapper">
+    <p class="figure-description">
+      <strong>Figure 3</strong> shows customer retention over time, showing drop offs and trends across customer cohorts.
+    </p>
+    <figure class="project">
+      <a href="images/figure3.png" data-pswp-width="1200" data-pswp-height="800" class="project-link">
+        <img src="images/figure3.png" alt="Customer Retention">
+      </a>
+      <figcaption><strong>Figure 3:</strong> Customer Retention by Cohort</figcaption>
+    </figure>
+  </div>
+
+</div>
+
+  <!-- DAX / Analysis Methodology -->
+  <h3 id="methodology">Methodology</h3>
+  <p>The following steps outline the approach taken in DAX and Power BI to generate actionable insights.</p>
+  <ol>
+    <li><strong>Sales & Profit Measures:</strong> Key metrics were computed using DAX for Total Sales, Total Profit, Profit Margin and Unique Customers.
+      <pre><code class="language-dax">
+Total Sales = SUM(superstoresales_clean[Sales])
+Total Profit = SUM(superstoresales_clean[Profit])
+Profit Margin = DIVIDE([Total Profit], [Total Sales], 0)
+Unique Customers = DISTINCTCOUNT(superstoresales_clean[CustomerID])
+      </code></pre>
+    </li>
+    <li><strong>Time Intelligence Measures:</strong> Created DAX measures to track performance over time.
+      <pre><code class="language-dax">
+Total Sales Last Year = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DateTable[Date]))
+Total Sales YoY % Growth = DIVIDE([Total Sales] - [Total Sales Last Year], [Total Sales Last Year], 0)
+Total Profit Last Year = CALCULATE([Total Profit], SAMEPERIODLASTYEAR(DateTable[Date]))
+Total Profit YoY % Growth = DIVIDE([Total Profit] - [Total Profit Last Year], [Total Profit Last Year], 0)
+Cumulative Total Sales (YTD) = TOTALYTD([Total Sales], DateTable[Date])
+Cumulative Total Profit (YTD) = TOTALYTD([Total Profit], DateTable[Date])
+</code></pre>
+    </li>
+
+    <li><strong>Retention Measures:</strong> Created DAX columns and measures to track customer cohorts over time and Retention.
+        <pre><code class="language-dax">
+MinOrderDate (DAXColumn) = CALCULATE(MIN(superstoresales_clean[OrderDate]), ALLEXCEPT(superstoresales_clean, superstoresales_clean[CustomerID]))
+Cohort = FORMAT(superstoresales_clean[MinOrderDate (DAXColumn)], "YYYY-MM")
+OrderRelativeMonth (DAXColumn) = DATEDIFF(STARTOFMONTH(superstoresales_clean[MinOrderDate (DAXColumn)]), STARTOFMONTH(superstoresales_clean[OrderDate]), MONTH)
+Retention = DIVIDE(DISTINCTCOUNT(superstoresales_clean[CustomerID]), 
+CALCULATE(DISTINCTCOUNT(superstoresales_clean[CustomerID]), 
+FILTER(ALL(superstoresales_clean), superstoresales_clean[Cohort] = MIN(superstoresales_clean[Cohort]) && superstoresales_clean[OrderRelativeMonth] = 0)))
+        </code></pre>
+        </li>
+
+    <li><strong>Interactive Reporting:</strong> Slicers for Year, Region, Category, Customer Segment and Segment. Visuals highlight trends, top products and actionable insights.</li>
+  </ol>
+
+  <!-- Conclusion -->
+  <h3 id="conclusion">Conclusion</h3>
+  <p>
+    By combining SQL data cleaning with Power BI analysis and reporting, this project demonstrates a complete Business Intelligence workflow. 
+    The cleaned data supports accurate metrics and insights, while the reports provide actionable guidance for business strategy, 
+    including targeting underperforming regions and segments, optimising product focus and boosting customer retention.
+  </p>
+
+  <!-- GitHub Link -->
+  <ul class="actions special">
+    <li><a href="https://github.com/patrickbrown123/portfolio" class="button primary large">View Project</a></li>
+  </ul>
+</article>
+
+
+
+						
+					
+
+					
+</div>
+<!-- Contact Section -->
+  <footer id="contact">
+    <h3>Contact</h3>
+    <div class="footer-container">
+      <!-- Email Section -->
+      <div class="footer-section">
+        <h3>Email</h3>
+        <ul class="icons">
+          <li>
+            <a href="mailto:patrickb123@hotmail.co.uk" class="icon fa-envelope" aria-label="Send email to Patrick Brown">
+              <span class="label">Email</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://mail.google.com/mail/?view=cm&to=patrickb123@hotmail.co.uk" target="_blank" rel="noopener noreferrer" class="icon brands fa-google" aria-label="Send email via Gmail">
+              <span class="label">Gmail</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://outlook.live.com/mail/deeplink/compose?to=patrickb123@hotmail.co.uk" target="_blank" rel="noopener noreferrer" class="icon brands fa-microsoft" aria-label="Send email via Outlook">
+              <span class="label">Outlook</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Section -->
+      <div class="footer-section">
+        <h3>Social</h3>
+        <ul class="icons">
+          <li>
+            <a href="https://github.com/patrickbrown123" target="_blank" rel="noopener noreferrer" class="icon brands fa-github" aria-label="Patrick Brown GitHub">
+              <span class="label">GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/patrick-brown-522212b2/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin" aria-label="Patrick Brown LinkedIn">
+              <span class="label">LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Patrick Brown</li>
+        <li>Design: <a href="https://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<!---<script src="assets/js/jquery.scrolly.min.js"></script>-->
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+    var navHeight = $('#navbar').outerHeight();
+    
+    // Smooth scrolling for navbar links
+    $('#navbar ul li a, .scrolly').on('click', function(e){
+        e.preventDefault();
+        var target = $($(this).attr('href'));
+        if(target.length){
+            $('html, body').animate({
+                scrollTop: target.offset().top - navHeight
+            }, 600);
+        }
+    });
+
+    // Scroll spy
+    function updateActiveNav() {
+        var scrollPos = $(document).scrollTop();
+        var windowHeight = $(window).height();
+        var docHeight = $(document).height();
+
+        $('#navbar ul li a').each(function(){
+            var currLink = $(this);
+            var ref = $(currLink.attr('href'));
+
+            if(ref.length){
+                var sectionTop = ref.offset().top - navHeight - 5;
+                var sectionBottom = sectionTop + ref.outerHeight();
+
+                // If near the very bottom of the page, make contact active
+                if(scrollPos + windowHeight >= docHeight - 5 && currLink.attr('href') === '#contact') {
+                    $('#navbar ul li a').removeClass('active');
+                    currLink.addClass('active');
+                    return true; // skip rest
+                }
+
+                // Highlight section normally
+                if(scrollPos >= sectionTop && scrollPos < sectionBottom){
+                    $('#navbar ul li a').removeClass('active');
+                    currLink.addClass('active');
+                }
+            }
+        });
+    }
+
+    $(window).on('scroll resize', updateActiveNav);
+    updateActiveNav(); // initial call
+});
+    </script>
+
+    <!-- PhotoSwipe v5 -->
+<script type="module">
+import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.min.js';
+
+/*if (window.innerWidth <= 768) { // mobile only*/
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.projects-container',
+    children: 'a.project-link', // attach to your <a> elements
+    pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.min.js')
+  });
+  lightbox.init();
+</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
